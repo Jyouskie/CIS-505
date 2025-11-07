@@ -57,18 +57,23 @@ public class YouskieviczEnhancedFutureValueApp extends Application {
         int r = 0;
         grid.add(lblMonthlyPayment, 0, r);
         grid.add(txtMonthlyPayment, 1, r++);
-        grid.add(lblInterestRate,  0, r);
-        grid.add(txtInterestRate,  1, r++);
-        grid.add(lblYears,         0, r);
-        grid.add(cbYears,          1, r++);
-        grid.add(lblFutureValue,   0, r);
-        grid.add(txtResults,       1, r++);
-        grid.add(lblHint,          1, r++);
-        grid.add(lblFutureValueDate, 1, r++);
+
+        grid.add(lblInterestRate, 0, r);
+        grid.add(txtInterestRate, 1, r++);
+        grid.add(lblHint, 1, r++); // <-- move hint just below interest rate box
+
+        grid.add(lblYears, 0, r);
+        grid.add(cbYears, 1, r++);
+
+        grid.add(lblFutureValue, 0, r);
+        grid.add(txtResults, 1, r++);
+
+        grid.add(lblFutureValueDate, 1, r++); // <-- move date label right below results
 
         HBox buttons = new HBox(10, btnCalculate, btnClear);
         buttons.setPadding(new Insets(10, 0, 0, 0));
         grid.add(buttons, 1, r);
+
 
         // wire events (assignment requirement)
         btnClear.setOnAction(e -> clearFormFields());
